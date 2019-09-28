@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:layout_weight="1.5"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:inputType="text"
+                    android:id="@+id/txt_name"
+                    
+                    android:textCursorDrawable="@drawable/color_cursor" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/et_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textCursorDrawable="@drawable/color_cursor" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="text"
+                android:id="@+id/et_mobile_model"
+                android:textCursorDrawable="@drawable/color_cursor" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="text"
+                android:id="@+id/et_imei"
+                android:textCursorDrawable="@drawable/color_cursor" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:id="@+id/lab1"
+                android:text="Mobile photo "
+                android:textColor="@color/purple" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view1"
+                
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/eye"
+                    android:background="@color/darkergray"
+                    android:padding="10dp"
+                    android:id="@+id/img_mob1"
+                    android:layout_marginLeft="5dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/img_mob2"
+                    android:padding="10dp"
+                    android:background="@color/darkergray"
+                    android:src="@drawable/eye"
+                    android:layout_marginLeft="30dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                
+                android:id="@+id/lab2"
+                android:text="Invoice Copy"
+                android:textColor="@color/purple" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view2"
+                
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/eye"
+                    android:padding="10dp"
+                    android:background="@color/darkergray"
+                    android:id="@+id/img_invoice1"
+                    android:layout_marginLeft="5dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/img_invoice2"
+                    android:padding="10dp"
+                    android:src="@drawable/eye"
+                    android:background="@color/darkergray"
+                    android:layout_marginLeft="30dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:id="@+id/label3"
+                
+                android:text="Customer Id Proof"
+                android:textColor="@color/purple" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view3"
+                
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/eye"
+                    android:padding="10dp"
+                    android:background="@color/darkergray"
+                    android:id="@+id/img_cust_prof1"
+                    android:layout_marginLeft="5dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/img_cust_prof2"
+                    android:src="@drawable/eye"
+                    android:background="@color/darkergray"
+                    android:padding="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

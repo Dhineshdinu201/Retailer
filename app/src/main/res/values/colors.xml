@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="yellow">#FAD06C</color>
+    <color name="mDark">#30333A</color>
+    <color name="logocolor">#d71576</color>
+    <color name="colorNavIcon">#dae9f6</color>
+    <color name="colorNavText">#01294b</color>
+    <color name="cardcolor">#F6c570</color>
+    <color name="back_color">#303960</color>
+    <color name="purple">#7708A3</color>
+    <color name="litetrans">#80ffffff</color>
+    <color name="dark_trans">#80000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="darkergray">#aaa</color>
+</resources>

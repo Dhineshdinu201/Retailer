@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DataActivity"
+    tools:showIn="@layout/activity_data">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:layout_weight="1.5"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="Search"
+                android:drawableLeft="@drawable/search"
+                android:id="@+id/search"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Name*"
+                    android:inputType="text"
+                    android:id="@+id/et_name"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+            </LinearLayout>
+            <EditText
+                android:id="@+id/et_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="number"
+                android:maxLength="10"
+                android:hint="Contact No *"
+                android:textCursorDrawable="@drawable/color_cursor" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="text"
+                android:hint="Mobile Model *"
+                android:id="@+id/et_mobile_model"
+                android:textCursorDrawable="@drawable/color_cursor" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="text"
+                android:hint="IMEI *"
+                android:id="@+id/et_imei"
+                android:textCursorDrawable="@drawable/color_cursor" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Mobile photo "
+                android:textColor="@color/purple" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/cam"
+                    android:background="@color/darkergray"
+                    android:padding="10dp"
+                    android:id="@+id/img_mob1"
+                    android:layout_marginLeft="5dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/img_mob2"
+                    android:padding="10dp"
+                    android:background="@color/darkergray"
+                    android:src="@drawable/cam"
+                    android:layout_marginLeft="30dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Invoice Copy"
+                android:textColor="@color/purple" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/cam"
+                    android:padding="10dp"
+                    android:background="@color/darkergray"
+                    android:id="@+id/img_invoice1"
+                    android:layout_marginLeft="5dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/img_invoice2"
+                    android:padding="10dp"
+                    android:src="@drawable/cam"
+                    android:background="@color/darkergray"
+                    android:layout_marginLeft="30dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Customer Id Proof"
+                android:textColor="@color/purple" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/cam"
+                    android:padding="10dp"
+                    android:background="@color/darkergray"
+                    android:id="@+id/img_cust_prof1"
+                    android:layout_marginLeft="5dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/img_cust_prof2"
+                    android:src="@drawable/cam"
+                    android:background="@color/darkergray"
+                    android:padding="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:textColorHint="@android:color/black"
+                    android:textCursorDrawable="@drawable/color_cursor" />
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:minWidth="300dp"
+                android:layout_gravity="center"
+                android:background="@color/cardcolor"
+                android:text="Register"
+                android:id="@+id/btn_submit"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <!--<EditText-->
+        <!--android:id="@+id/editText8"-->
+        <!--android:layout_width="377dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="44dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="378dp"-->
+        <!--android:ems="10"-->
+        <!--android:hint="@string/name"-->
+        <!--android:inputType="textPersonName"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/imageButton7"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.444"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/editText7"-->
+        <!--android:layout_width="377dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="100dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginBottom="413dp"-->
+        <!--android:ems="10"-->
+        <!--android:hint="@string/contact"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:tag="+91 "-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/button2"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.444"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/editText5"-->
+        <!--android:layout_width="377dp"-->
+        <!--android:layout_height="39dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="152dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:ems="10"-->
+        <!--android:hint="@string/model"-->
+        <!--android:inputType="textPersonName"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.444"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/editText6"-->
+        <!--android:layout_width="377dp"-->
+        <!--android:layout_height="39dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginTop="200dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:ems="10"-->
+        <!--android:hint="@string/imei"-->
+        <!--android:inputType="textPersonName"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.555"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/textView4"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="20dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginBottom="409dp"-->
+        <!--android:text="@string/mobile_photo"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/editText8"-->
+        <!--app:layout_constraintVertical_bias="1.0" />-->
+
+    <!--&lt;!&ndash; M - IMG 1 &ndash;&gt;-->
+    <!--<ImageButton-->
+        <!--android:id="@+id/imageButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="20dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginBottom="347dp"-->
+        <!--android:backgroundTint="@color/colorPrimaryDark"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/editText8"-->
+        <!--app:layout_constraintVertical_bias="1.0"-->
+        <!--app:srcCompat="@android:drawable/ic_menu_camera" />-->
+
+    <!--&lt;!&ndash; M - IMG 2 &ndash;&gt;-->
+    <!--<ImageButton-->
+        <!--android:id="@+id/imageButton3"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:backgroundTint="@color/colorPrimaryDark"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/imageButton"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/imageButton"-->
+        <!--app:srcCompat="@android:drawable/ic_menu_camera" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/textView5"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="20dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginBottom="309dp"-->
+        <!--android:text="@string/invoice_photo"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/editText8"-->
+        <!--app:layout_constraintVertical_bias="0.996" />-->
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/imageButton4"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="24dp"-->
+        <!--android:layout_marginLeft="24dp"-->
+        <!--android:layout_marginBottom="241dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--android:backgroundTint="@color/colorPrimaryDark"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/editText8"-->
+        <!--app:layout_constraintVertical_bias="0.965"-->
+        <!--app:srcCompat="@android:drawable/ic_menu_camera" />-->
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/imageButton5"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/imageButton4"-->
+        <!--android:backgroundTint="@color/colorPrimaryDark"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/imageButton4"-->
+        <!--app:srcCompat="@android:drawable/ic_menu_camera" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/textView9"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="20dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginBottom="203dp"-->
+        <!--android:text="@string/customer_id"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/editText8"-->
+        <!--app:layout_constraintVertical_bias="0.95" />-->
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/imageButton7"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="4dp"-->
+        <!--android:layout_marginLeft="4dp"-->
+        <!--android:layout_marginBottom="157dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/textView9"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/editText8"-->
+        <!--android:backgroundTint="@color/colorPrimaryDark"-->
+        <!--app:srcCompat="@android:drawable/ic_menu_camera" />-->
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/imageButton8"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/imageButton7"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/imageButton7"-->
+        <!--android:backgroundTint="@color/colorPrimaryDark"-->
+        <!--app:srcCompat="@android:drawable/ic_menu_camera" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/button2"-->
+        <!--android:layout_width="251dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_marginBottom="79dp"-->
+        <!--android:backgroundTint="@color/colorPrimaryDark"-->
+        <!--android:text="@string/submit"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.525"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/editText7" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
