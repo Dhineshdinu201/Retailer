@@ -29,6 +29,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -56,12 +57,46 @@ public class DataActivity extends AppCompatActivity {
     public static final String REVISION_NO_DATE_TIME_FORMAT = "yyyyMMddHHmmss";
     boolean mobile1 = false, mobile2 = false, invoice1 = false, invoice2 = false, custProof1 = false, custProof2 = false;
     String mobile1Str = "", mobile2Str = "", invoice1Str = "", invoice2Str = "", custProof1Str = "", custProof2Str = "";
-    EditText custName, contactNo, number, imei, mobileModel;
+    EditText custName, contactNo, number, imei, mobileModel,et_price,et_activation;
+    TextView pack;
+    String pack_selected;
+    int price;
+    Button getpack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
+        et_price=(EditText)findViewById(R.id.et_price);
+        getpack=(Button)findViewById(R.id.getpack);
+
+        et_activation=(EditText)findViewById(R.id.et_activation);
+        pack=(TextView)findViewById(R.id.pack);
+
+        getpack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    price=Integer.parseInt(et_price.getText().toString());
+                    if(price!=0) {
+                        if (price <= 10000 && price >= 4000) {
+                            pack.setText("1299");
+                            pack_selected = "1299";
+                        } else if (price > 10000 && price <= 25000) {
+                            pack.setText("1999");
+                            pack_selected = "1999";
+                        }
+                        else {
+                            pack.setText("No pack available");
+                        }
+                    }
+
+                }catch (NumberFormatException e){
+                    Toast.makeText(DataActivity.this, "Please insert the price", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
         btn_search=(Button)findViewById(R.id.search);
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override

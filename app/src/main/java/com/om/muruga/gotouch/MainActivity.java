@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//        Intent intent=new Intent(MainActivity.this,DataActivity.class);
+//        startActivity(intent);
         userName = (EditText)findViewById(R.id.editText3);
         password = (EditText)findViewById(R.id.editText4);
         progress = new ProgressDialog(this);

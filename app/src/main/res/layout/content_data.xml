@@ -81,6 +81,37 @@
                 android:hint="IMEI *"
                 android:id="@+id/et_imei"
                 android:textCursorDrawable="@drawable/color_cursor" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="number"
+                android:hint="Price *"
+                android:id="@+id/et_price"
+                android:textCursorDrawable="@drawable/color_cursor" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="text"
+                android:hint="Activation code *"
+                android:id="@+id/et_activation"
+                android:textCursorDrawable="@drawable/color_cursor" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pack"
+                android:textColor="@android:color/black"
+                android:layout_margin="8dp"
+                android:textCursorDrawable="@drawable/color_cursor" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/getpack"
+                android:text="GET PACK"
+                android:layout_margin="8dp"
+                android:background="@color/colorAccent"/>
 
 
             <TextView
@@ -192,7 +223,7 @@
                 android:layout_width="wrap_content"
                 android:minWidth="300dp"
                 android:layout_gravity="center"
-                android:background="@color/cardcolor"
+                android:background="@color/colorAccent"
                 android:text="Register"
                 android:id="@+id/btn_submit"
                 android:textColor="@android:color/black"
