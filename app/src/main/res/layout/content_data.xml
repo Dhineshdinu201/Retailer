@@ -104,14 +104,6 @@
                 android:textColor="@android:color/black"
                 android:layout_margin="8dp"
                 android:textCursorDrawable="@drawable/color_cursor" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:id="@+id/getpack"
-                android:text="GET PACK"
-                android:layout_margin="8dp"
-                android:background="@color/colorAccent"/>
 
 
             <TextView

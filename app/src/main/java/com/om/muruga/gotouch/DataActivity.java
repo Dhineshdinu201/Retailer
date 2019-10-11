@@ -22,6 +22,8 @@ import androidx.core.content.ContextCompat;
 
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -61,21 +63,20 @@ public class DataActivity extends AppCompatActivity {
     TextView pack;
     String pack_selected;
     int price;
-    Button getpack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
         et_price=(EditText)findViewById(R.id.et_price);
-        getpack=(Button)findViewById(R.id.getpack);
 
         et_activation=(EditText)findViewById(R.id.et_activation);
         pack=(TextView)findViewById(R.id.pack);
 
-        getpack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        et_price.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+
                 try {
                     price=Integer.parseInt(et_price.getText().toString());
                     if(price!=0) {
@@ -94,9 +95,13 @@ public class DataActivity extends AppCompatActivity {
                 }catch (NumberFormatException e){
                     Toast.makeText(DataActivity.this, "Please insert the price", Toast.LENGTH_SHORT).show();
                 }
-
             }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
+
         btn_search=(Button)findViewById(R.id.search);
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -257,6 +262,12 @@ public class DataActivity extends AppCompatActivity {
                 map.put("mobile_model", "" + mobileModel.getText().toString());
 
                 map.put("imei", "" + imei.getText().toString());
+
+                map.put("activationCode", "" + et_activation.getText().toString());
+
+                map.put("price", "" + et_price.getText().toString());
+
+                map.put("pack", "" + pack_selected);
 
                 map.put("img_mob1", "" + mobile1Str);
 
