@@ -65,77 +65,69 @@ public class MainActivity extends AppCompatActivity {
     String GET_URL;
     String IMEI_Number_Holder;
     TelephonyManager telephonyManager;
+    private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 112;
+    String deviceImei="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        int MyVersion = Build.VERSION.SDK_INT;
-        if (MyVersion > Build.VERSION_CODES.LOLLIPOP_MR1) {
-            if (!checkIfAlreadyhavePermission()) {
-                requestForSpecificPermission();
-            }
-        }
-//        Intent intent=new Intent(MainActivity.this,DataActivity.class);
-//        startActivity(intent);
 
         userName = (EditText)findViewById(R.id.editText3);
         password = (EditText)findViewById(R.id.editText4);
         progress = new ProgressDialog(this);
-        //showalert();
-        getIMEI();
+
+        if (!checkPermission()) {
+            requestPermission();
+        }
+
+        Checkeligibility();
+
     }
-    private void requestForSpecificPermission() {
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, 101);
-    }
-    private boolean checkIfAlreadyhavePermission() {
-        int result = ContextCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS);
-        if (result == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        } else {
+
+    public boolean checkPermission(){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission is not granted
             return false;
         }
+        return true;
     }
-    public void getIMEI(){
-        telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    Activity#requestPermissions
-                Toast.makeText(this, "allow app to read phone state", Toast.LENGTH_SHORT).show();
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for Activity#requestPermissions for more details.
-                return;
-            }
-            else {
-                IMEI_Number_Holder = telephonyManager.getDeviceId();
-                Log.i("IMEI",IMEI_Number_Holder);
-                Checkeligibility();
-            }
-        }
+
+    private void requestPermission() {
+
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.CAMERA},
+                MY_PERMISSIONS_REQUEST_CALL_PHONE);
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     public void Checkeligibility() {
+
+        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        if (checkPermission())
+        {
+            String deviceId = telephonyManager.getDeviceId();
+            IMEI_Number_Holder = deviceId;
+        }else{
+            Toast.makeText(getApplicationContext(),"Kindly Allow permission to continue in Settings",Toast.LENGTH_SHORT).show();
+            return ;
+        }
+
         GET_URL =  URL+"/v1/gotouch/retailer/checkRetailerExists/"+IMEI_Number_Holder;
         Log.i("url",GET_URL);
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
         StringRequest request = new StringRequest(Request.Method.GET, GET_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
                 Log.i("My success", "" + response);
-
-
                 try {
-                    //JSONObject jsonObject=new JSONObject(response);
-                    //will receive id when the register is success
                     if(response.equals("Success")){
                         Toast.makeText(MainActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
                     }
@@ -143,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent=new Intent(MainActivity.this,Reg.class);
                         startActivity(intent);
                     }
-                    //************parsing response object**********
                 } catch (IndexOutOfBoundsException e) {
                     e.printStackTrace();
                 }
@@ -153,9 +144,9 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                System.out.println(error.getCause());
                 Toast.makeText(MainActivity.this, "Please check connectivity", Toast.LENGTH_SHORT).show();
-                Log.i("My error", "" + error);
+                Log.e("My error", "" + error);
             }
         }) {
             @Override
@@ -170,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         queue.add(request);
 
     }
+
     public void api() {
         GET_URL =  URL+"/v1/gotouch/retailer/getSettings";
         Log.i("url",GET_URL);
@@ -264,9 +256,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigate(View v){
-//        Intent i = new Intent(getApplicationContext(),DataActivity.class);
-//        startActivity(i);
-        new RequestTask().execute(userName.getText().toString(),password.getText().toString());
+        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        if (checkPermission())
+        {
+            String deviceId = telephonyManager.getDeviceId();
+            deviceImei = deviceId;
+            Log.i("IMEI",deviceId);
+            new RequestTask().execute(userName.getText().toString(),password.getText().toString(),deviceId);
+        }else{
+            Toast.makeText(getApplicationContext(),"Kindly Allow permission to continue in Settings",Toast.LENGTH_SHORT).show();
+        }
     }
 
     class RequestTask extends AsyncTask<String, String, String> {
